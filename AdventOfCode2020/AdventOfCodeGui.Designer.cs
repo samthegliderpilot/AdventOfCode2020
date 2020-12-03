@@ -63,7 +63,7 @@
             this._day2.UseVisualStyleBackColor = true;
             this._day2.Click += new System.EventHandler(this._day2_Click);
             // 
-            // Form1
+            // AdventOfCodeGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -71,8 +71,8 @@
             this.Controls.Add(this._day2);
             this.Controls.Add(this._output);
             this.Controls.Add(this._day1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "AdventOfCodeGui";
+            this.Text = "Advent of Code 2020";
             this.ResumeLayout(false);
 
         }
