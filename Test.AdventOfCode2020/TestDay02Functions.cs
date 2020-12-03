@@ -24,11 +24,11 @@ namespace Test.AdventOfCode2020
         [TestCase("1-3 b: cdefg", false)]
         [TestCase("2-9 c: ccccccccc", false)]
         
-        public void TestSledPassword(string line, bool isValid)
+        public void TestTobogganPassword(string line, bool isValid)
         {
             List<string> potentialData = new List<string>();
-            potentialData.Add(line); 
-
+            potentialData.Add(line);
+            
             Day02Function day02 = new Day02Function(potentialData);
             Assert.AreEqual(isValid ? 1 : 0, day02.ScanListForValidCorrectTobogganPasswords());
         }
