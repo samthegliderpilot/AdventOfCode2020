@@ -111,5 +111,32 @@ namespace AdventOfCode2020
             int validPassportsWithData = passports.Count(s => s.IsDataValid());
             _output.Text += Environment.NewLine + "Found " + validPassportsWithData.ToString() + " valid passports with valid data";
         }
+
+        private void _day05_Click(object sender, EventArgs e)
+        {
+            var fileData = ReadInFileAsLinesOfText("Data\\Day05_Data.txt");
+            
+            long max = fileData.Max(s => Day05Functions.GetSeatId(s));
+            _output.Text = "Largest seat id is " + max.ToString();
+            var knownSeats = Day05Functions.GetAndSortSeatIds(fileData);
+            int checkedSeatId = knownSeats[0];
+            int foundSeat = -1;
+            for (int i = 0; i < knownSeats.Count; i++)
+            {
+                int thisSeat = knownSeats[i];
+                if (checkedSeatId != thisSeat)
+                {
+                    foundSeat = checkedSeatId;
+                    break;
+                }
+
+                checkedSeatId++;
+
+            }
+            StringBuilder builder = new StringBuilder();
+            knownSeats.Select(s => builder.Append(s.ToString() + " "));
+
+            _output.Text += Environment.NewLine + "Missing seat ID are " + foundSeat.ToString();
+        }
     }
 }

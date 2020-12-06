@@ -33,6 +33,7 @@
             this._day02 = new System.Windows.Forms.Button();
             this._day03 = new System.Windows.Forms.Button();
             this._day04 = new System.Windows.Forms.Button();
+            this._day05 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // _day01
@@ -85,11 +86,22 @@
             this._day04.UseVisualStyleBackColor = true;
             this._day04.Click += new System.EventHandler(this._day04_Click);
             // 
+            // _day05
+            // 
+            this._day05.Location = new System.Drawing.Point(13, 205);
+            this._day05.Name = "_day05";
+            this._day05.Size = new System.Drawing.Size(110, 42);
+            this._day05.TabIndex = 5;
+            this._day05.Text = "Day 05";
+            this._day05.UseVisualStyleBackColor = true;
+            this._day05.Click += new System.EventHandler(this._day05_Click);
+            // 
             // AdventOfCodeGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 814);
+            this.Controls.Add(this._day05);
             this.Controls.Add(this._day04);
             this.Controls.Add(this._day03);
             this.Controls.Add(this._day02);
@@ -108,6 +120,7 @@
         private System.Windows.Forms.Button _day02;
         private System.Windows.Forms.Button _day03;
         private System.Windows.Forms.Button _day04;
+        private System.Windows.Forms.Button _day05;
     }
 }
 
