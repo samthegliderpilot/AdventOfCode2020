@@ -32,6 +32,7 @@
             this._output = new System.Windows.Forms.RichTextBox();
             this._day02 = new System.Windows.Forms.Button();
             this._day03 = new System.Windows.Forms.Button();
+            this._day04 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // _day01
@@ -74,11 +75,22 @@
             this._day03.UseVisualStyleBackColor = true;
             this._day03.Click += new System.EventHandler(this._day03_Click);
             // 
+            // _day04
+            // 
+            this._day04.Location = new System.Drawing.Point(12, 157);
+            this._day04.Name = "_day04";
+            this._day04.Size = new System.Drawing.Size(110, 42);
+            this._day04.TabIndex = 4;
+            this._day04.Text = "Day 04";
+            this._day04.UseVisualStyleBackColor = true;
+            this._day04.Click += new System.EventHandler(this._day04_Click);
+            // 
             // AdventOfCodeGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 814);
+            this.Controls.Add(this._day04);
             this.Controls.Add(this._day03);
             this.Controls.Add(this._day02);
             this.Controls.Add(this._output);
@@ -95,6 +107,7 @@
         private System.Windows.Forms.RichTextBox _output;
         private System.Windows.Forms.Button _day02;
         private System.Windows.Forms.Button _day03;
+        private System.Windows.Forms.Button _day04;
     }
 }
 

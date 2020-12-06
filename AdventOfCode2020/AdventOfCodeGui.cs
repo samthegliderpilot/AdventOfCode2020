@@ -59,7 +59,7 @@ namespace AdventOfCode2020
 
         }
 
-        private IList<string> ReadInFileAsLinesOfText(string filePath)
+        private IList<string> ReadInFileAsLinesOfText(string filePath, bool includeNewLines = false)
         {
             List<string> fileData = new List<string>();
             using (StreamReader reader = new StreamReader(filePath))
@@ -67,7 +67,7 @@ namespace AdventOfCode2020
                 while (!reader.EndOfStream)
                 {
                     string line = reader.ReadLine().Trim();
-                    if (!string.IsNullOrWhiteSpace(line))
+                    if (includeNewLines || !string.IsNullOrWhiteSpace(line))
                     {
                         fileData.Add(line);
                     }
@@ -93,10 +93,23 @@ namespace AdventOfCode2020
             long oneTwo = Day03Functions.CountTrees(map, 0, 0, 1, 2);
             actual = oneOne * threeOne * fiveOne * sevenOne * oneTwo;
 
-            _output.Text += Environment.NewLine + "Found " + actual.ToString() + " trees to minimize";
+            _output.Text = Environment.NewLine + "Found " + actual.ToString() + " trees to minimize";
             int otherActual = (int)(oneOne * threeOne * fiveOne * sevenOne * oneTwo);
             _output.Text += Environment.NewLine + "Found " + otherActual.ToString() + " trees to minimize if using ints";
 
+        }
+
+        private void _day04_Click(object sender, EventArgs e)
+        {
+            var fileData = ReadInFileAsLinesOfText("Data\\Day04_Data.txt", true);
+            IList<Day04Functions.PassportData> passports =
+                Day04Functions.CreatePassportData(fileData);
+
+            int validPassports = passports.Count(s => s.IsValidIgnoringPassportId());
+            _output.Text = "Found " + validPassports.ToString() + " valid passports";
+
+            int validPassportsWithData = passports.Count(s => s.IsDataValid());
+            _output.Text += Environment.NewLine + "Found " + validPassportsWithData.ToString() + " valid passports with valid data";
         }
     }
 }
