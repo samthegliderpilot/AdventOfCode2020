@@ -119,24 +119,21 @@ namespace AdventOfCode2020
             long max = fileData.Max(s => Day05Functions.GetSeatId(s));
             _output.Text = "Largest seat id is " + max.ToString();
             var knownSeats = Day05Functions.GetAndSortSeatIds(fileData);
-            int checkedSeatId = knownSeats[0];
-            int foundSeat = -1;
-            for (int i = 0; i < knownSeats.Count; i++)
-            {
-                int thisSeat = knownSeats[i];
-                if (checkedSeatId != thisSeat)
-                {
-                    foundSeat = checkedSeatId;
-                    break;
-                }
-
-                checkedSeatId++;
-
-            }
-            StringBuilder builder = new StringBuilder();
-            knownSeats.Select(s => builder.Append(s.ToString() + " "));
-
+            int foundSeat = Day05Functions.GetMissingSeatNumber(knownSeats);
             _output.Text += Environment.NewLine + "Missing seat ID are " + foundSeat.ToString();
+        }
+
+        private void _day06_Click(object sender, EventArgs e)
+        {
+            var fileData = ReadInFileAsLinesOfText("Data\\Day06_Data.txt", true);
+            var groupsAnswers = Day06Functions.ParseGroupsOfAnswers(fileData);
+            int sum = groupsAnswers.Sum(s => s.GetUniqueNumberOfYeses());
+
+            _output.Text = "Sum of yeses is " + sum.ToString();
+
+            int otherSum = groupsAnswers.Sum(s => s.GetCountOfAllYeses());
+
+            _output.Text += Environment.NewLine + "Sum of all yeses is " + otherSum.ToString();
         }
     }
 }

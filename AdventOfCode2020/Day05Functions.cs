@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 
 namespace AdventOfCode2020
 {
+    /// <summary>
+    /// The ah-ha moment was realizing that the strings were really just binary numbers.
+    /// </summary>
     public class Day05Functions
     {
         public static int ConvertFirstHalfOfString(string frontBacks)
@@ -37,6 +41,27 @@ namespace AdventOfCode2020
             var knownSeatIds = ticketPasses.Select(GetSeatId).ToList();
             knownSeatIds.Sort();
             return knownSeatIds;
+        }
+
+        public static int GetMissingSeatNumber(List<int> knownSeats)
+        {
+            
+            int checkedSeatId = knownSeats[0];
+            int foundSeat = -1;
+            for (int i = 0; i < knownSeats.Count; i++)
+            {
+                int thisSeat = knownSeats[i];
+                if (checkedSeatId != thisSeat)
+                {
+                    foundSeat = checkedSeatId;
+                    break;
+                }
+
+                checkedSeatId++;
+
+            }
+
+            return foundSeat;
         }
     }
 }
