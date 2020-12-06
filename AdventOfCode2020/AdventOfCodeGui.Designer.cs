@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this._day1 = new System.Windows.Forms.Button();
+            this._day01 = new System.Windows.Forms.Button();
             this._output = new System.Windows.Forms.RichTextBox();
-            this._day2 = new System.Windows.Forms.Button();
+            this._day02 = new System.Windows.Forms.Button();
+            this._day03 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // _day1
+            // _day01
             // 
-            this._day1.Location = new System.Drawing.Point(13, 13);
-            this._day1.Name = "_day1";
-            this._day1.Size = new System.Drawing.Size(110, 42);
-            this._day1.TabIndex = 0;
-            this._day1.Text = "Day 01";
-            this._day1.UseVisualStyleBackColor = true;
-            this._day1.Click += new System.EventHandler(this._day1_Click);
+            this._day01.Location = new System.Drawing.Point(13, 13);
+            this._day01.Name = "_day01";
+            this._day01.Size = new System.Drawing.Size(110, 42);
+            this._day01.TabIndex = 0;
+            this._day01.Text = "Day 01";
+            this._day01.UseVisualStyleBackColor = true;
+            this._day01.Click += new System.EventHandler(this._day01_Click);
             // 
             // _output
             // 
@@ -53,24 +54,35 @@
             this._output.TabIndex = 1;
             this._output.Text = "";
             // 
-            // _day2
+            // _day02
             // 
-            this._day2.Location = new System.Drawing.Point(12, 61);
-            this._day2.Name = "_day2";
-            this._day2.Size = new System.Drawing.Size(110, 42);
-            this._day2.TabIndex = 2;
-            this._day2.Text = "Day 02";
-            this._day2.UseVisualStyleBackColor = true;
-            this._day2.Click += new System.EventHandler(this._day2_Click);
+            this._day02.Location = new System.Drawing.Point(12, 61);
+            this._day02.Name = "_day02";
+            this._day02.Size = new System.Drawing.Size(110, 42);
+            this._day02.TabIndex = 2;
+            this._day02.Text = "Day 02";
+            this._day02.UseVisualStyleBackColor = true;
+            this._day02.Click += new System.EventHandler(this._day02_Click);
+            // 
+            // _day03
+            // 
+            this._day03.Location = new System.Drawing.Point(13, 109);
+            this._day03.Name = "_day03";
+            this._day03.Size = new System.Drawing.Size(110, 42);
+            this._day03.TabIndex = 3;
+            this._day03.Text = "Day 03";
+            this._day03.UseVisualStyleBackColor = true;
+            this._day03.Click += new System.EventHandler(this._day03_Click);
             // 
             // AdventOfCodeGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 814);
-            this.Controls.Add(this._day2);
+            this.Controls.Add(this._day03);
+            this.Controls.Add(this._day02);
             this.Controls.Add(this._output);
-            this.Controls.Add(this._day1);
+            this.Controls.Add(this._day01);
             this.Name = "AdventOfCodeGui";
             this.Text = "Advent of Code 2020";
             this.ResumeLayout(false);
@@ -79,9 +91,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button _day1;
+        private System.Windows.Forms.Button _day01;
         private System.Windows.Forms.RichTextBox _output;
-        private System.Windows.Forms.Button _day2;
+        private System.Windows.Forms.Button _day02;
+        private System.Windows.Forms.Button _day03;
     }
 }
 

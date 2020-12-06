@@ -53,7 +53,7 @@ namespace AdventOfCode2020
             }
         }
 
-        public Day02Function(List<string> fileData)
+        public Day02Function(IEnumerable<string> fileData)
         {
             List<Tuple<Password, string>> values = new List<Tuple<Password, string>>();
             foreach (string line in fileData)
